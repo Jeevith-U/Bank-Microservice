@@ -16,8 +16,9 @@ import lombok.Setter;
 public class Account {
 
     private String customerId;
+
     @Id
-    private long accountId;
+    private long accountNumber;
     private String accountType;
-    private String adress;
+    private String branchAddress;
 }

@@ -1,6 +1,8 @@
 package com.jeevith.accounts.entity;
 
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.* ;
+import jakarta.persistence.Column;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,16 +11,16 @@ import lombok.Setter;
 @Setter
 public class BaseEntity {
 
-    @column(updatable = false)
-    public localDateTime createdAt;
+    @Column  (updatable = false)
+    public LocalDateTime createdAt;
 
-    @column(updatable = false)
+    @Column(updatable = false)
     public String createdBy;
 
-    @column(insertable = false)
-    public localDateTime updatedAt;
+    @Column(insertable = false)
+    public LocalDateTime updatedAt;
 
-    @column(insertable = false)
+    @Column(insertable = false)
     public String updatedBy;
 
 }
