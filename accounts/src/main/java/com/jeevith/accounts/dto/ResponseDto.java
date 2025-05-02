@@ -12,4 +12,5 @@ import lombok.Setter;
 public class ResponseDto {
     private int statusCode ;
     private String message;
+
 }
