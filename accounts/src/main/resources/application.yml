@@ -20,6 +20,14 @@ spring:
         format_sql: true
         use_sql_comments: true
 
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+
+  profiles:
+    active: prod
+
 accounts:
   message: "Welcome to Bank accounts related local APIs "
   contactDetails:

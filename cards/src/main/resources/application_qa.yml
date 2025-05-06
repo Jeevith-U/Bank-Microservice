@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: "qa"
+
+accounts:
+  message: "Welcome to Bank CARD QA APIs "
+  contactDetails:
+    name: "Jeevith QA"
+    email: "jeevith.u.work@gmail.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345

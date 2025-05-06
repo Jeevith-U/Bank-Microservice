@@ -1,6 +1,7 @@
 package com.jeevith.cards.controller;
 
 import com.jeevith.cards.constants.CardsConstants;
+import com.jeevith.cards.dto.CardsContactInfoDto;
 import com.jeevith.cards.dto.CardsDto;
 import com.jeevith.cards.dto.ErrorResponseDto;
 import com.jeevith.cards.dto.ResponseDto;
@@ -35,6 +36,8 @@ import org.springframework.web.bind.annotation.*;
 public class CardsController {
 
     private ICardsService iCardsService;
+
+    private CardsContactInfoDto cardsContactInfoDto ;
 
     @Operation(
             summary = "Create Card REST API",
@@ -159,6 +162,31 @@ public class CardsController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(CardsConstants.STATUS_417, CardsConstants.MESSAGE_417_DELETE));
         }
+    }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/contact-info")
+    public ResponseEntity<CardsContactInfoDto> getContactInfo() {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(cardsContactInfoDto);
     }
 
 }

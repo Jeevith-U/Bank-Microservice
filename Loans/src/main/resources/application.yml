@@ -1,5 +1,5 @@
 server:
-  port:8090
+  port: 8090
 
 spring:
   application:
@@ -19,3 +19,15 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
+
+  profiles:
+    activate: prod
+
+loans:
+  message: "Welcome to Bank Loans Prod APIs "
+  contactDetails:
+    name: "Jeevith Productionn"
+    email: "jeevith.u.work@gmail.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345

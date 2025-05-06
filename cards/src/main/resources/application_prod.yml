@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+cards:
+  message: "Welcome to Bank Card Production APIs "
+  contactDetails:
+    name: "Jeevith Productionn"
+    email: "jeevith.u.work@gmail.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345

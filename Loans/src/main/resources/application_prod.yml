@@ -1,0 +1,13 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+loans:
+  message: "Welcome to Bank Loans Prod APIs "
+  contactDetails:
+    name: "Jeevith Productionn"
+    email: "jeevith.u.work@gmail.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345
