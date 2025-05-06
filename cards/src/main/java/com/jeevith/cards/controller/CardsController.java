@@ -54,7 +54,7 @@ public class CardsController {
             )
     }
     )
-    @PostMapping("/create")
+    @PostMapping("/cards")
     public ResponseEntity<ResponseDto> createCard(@Valid @RequestParam
                                                       @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                       String mobileNumber) {
@@ -81,7 +81,7 @@ public class CardsController {
                     )
             )
     })
-    @GetMapping("/fetch")
+    @GetMapping("/cards")
     public ResponseEntity<CardsDto> fetchCardDetails(@RequestParam
                                                                @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                String mobileNumber) {
@@ -110,7 +110,7 @@ public class CardsController {
                     )
             )
         })
-    @PutMapping("/update")
+    @PutMapping("/cards")
     public ResponseEntity<ResponseDto> updateCardDetails(@Valid @RequestBody CardsDto cardsDto) {
         boolean isUpdated = iCardsService.updateCard(cardsDto);
         if(isUpdated) {
@@ -145,7 +145,7 @@ public class CardsController {
                     )
             )
     })
-    @DeleteMapping("/delete")
+    @DeleteMapping("/cards")
     public ResponseEntity<ResponseDto> deleteCardDetails(@RequestParam
                                                                 @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                 String mobileNumber) {

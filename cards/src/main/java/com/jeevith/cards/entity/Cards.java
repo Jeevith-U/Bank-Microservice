@@ -14,7 +14,7 @@ public class Cards extends BaseEntity {
 
 	@Id
 	@GenarateCustomeCardId
-	private Long cardId;
+	private String cardId;
 
 	private String mobileNumber;
 
