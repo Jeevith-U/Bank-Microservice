@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 
 spring:
   application:
@@ -19,3 +19,12 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
+
+accounts:
+  message: "Welcome to Bank accounts related local APIs "
+  contactDetails:
+    name: "Jeevith Doe - Developer"
+    email: "jeevith.u.work@gmail.com"
+  onCallSupport:
+    - (555) 555-1234
+    - (555) 523-1345
