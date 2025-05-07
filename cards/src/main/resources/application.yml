@@ -24,3 +24,11 @@ spring:
 
   profiles:
     active: "qa"
+
+#Helps us to update the values of microservice without restarting the microservice
+# Using actuator refresh method which needed to be invoked from postman using post method
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

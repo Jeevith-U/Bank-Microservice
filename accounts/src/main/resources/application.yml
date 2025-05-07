@@ -23,3 +23,11 @@ spring:
       hibernate:
         format_sql: true
         use_sql_comments: true
+
+#Helps us to update the values of microservice without restarting the microservice
+# Using actuator refresh method which needed to be invoked from postman using post method
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
