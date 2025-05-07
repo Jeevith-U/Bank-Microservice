@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: accounts
+    name: loans
 
   datasource:
     url: jdbc:mysql://localhost:3306/Bank-microservice?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
@@ -21,13 +21,7 @@ spring:
         use_sql_comments: true
 
   profiles:
-    activate: prod
+    active: "prod"
 
-loans:
-  message: "Welcome to Bank Loans Prod APIs "
-  contactDetails:
-    name: "Jeevith Productionn"
-    email: "jeevith.u.work@gmail.com"
-  onCallSupport:
-    - (555) 555-1234
-    - (555) 523-1345
+  config :
+    import : "optional:configserver:http://localhost:8071/"

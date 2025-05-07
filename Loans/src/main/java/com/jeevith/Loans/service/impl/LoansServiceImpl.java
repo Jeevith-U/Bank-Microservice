@@ -1,4 +1,4 @@
-package com.jeevith.Loans.service;
+package com.jeevith.Loans.service.impl;
 
 import com.jeevith.Loans.constants.LoansConstants;
 import com.jeevith.Loans.dto.LoansDto;
@@ -7,9 +7,7 @@ import com.jeevith.Loans.exception.LoanAlreadyExistsException;
 import com.jeevith.Loans.exception.ResourceNotFoundException;
 import com.jeevith.Loans.mapper.LoansMapper;
 import com.jeevith.Loans.repository.LoansRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import com.jeevith.Loans.service.ILoansService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
