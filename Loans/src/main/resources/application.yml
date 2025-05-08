@@ -6,7 +6,7 @@ spring:
     name: loans
 
   datasource:
-    url: jdbc:mysql://localhost:3306/Bank-microservice?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/bank_microservice?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -23,11 +23,15 @@ spring:
   profiles:
     active: "prod"
 
-  config :
-    import : "optional:configserver:http://localhost:8071/"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
 
-#Helps us to update the values of microservice without restarting the microservice
-# Using actuator refresh method which needed to be invoked from postman using post method
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 management:
   endpoints:
     web:
