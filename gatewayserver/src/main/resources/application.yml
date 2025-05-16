@@ -33,3 +33,12 @@ logging:
     com:
       jeevith:
         gatewayserver: DEBUG
+
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10 # it will observe the 10 calls before taking the decision
+      permittedNumberOfCallsInHalfOpenState: 2
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10000
