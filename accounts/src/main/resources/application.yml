@@ -26,14 +26,17 @@ spring:
         format_sql: true
         use_sql_comments: true
 
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
   rabbitmq:
     host: "localhost"
     port: 5672
     username: "guest"
     password: "guest"
 
-# Helps us to update the values of microservice without restarting the microservice
-# Using actuator refresh method which needs to be invoked from Postman using POST method
 management:
   endpoints:
     web:
@@ -42,10 +45,9 @@ management:
 
   endpoint:
     shutdown:
-      access: unrestricted
+      enabled: true
     info:
-      env:
-        enabled: true
+      enabled: true
 
 eureka:
   instance:
@@ -53,7 +55,7 @@ eureka:
   client:
     fetchRegistry: true
     registerWithEureka: true
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8070/eureka/
 
 info:
@@ -67,3 +69,12 @@ logging:
     com:
       jeevith:
         accounts: DEBUG
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 2
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
