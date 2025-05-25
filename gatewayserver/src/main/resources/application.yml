@@ -11,7 +11,12 @@ spring:
           lowerCaseServiceId: true
       httpclient:  # configuration for time out
         connect-timeout: 1000 # request will wait for 1sec
-        response-timeout: 2s
+        response-timeout: 20s
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://localhost:7080/realms/master/protocol/openid-connect/certs"
 
 management:
   endpoints:
