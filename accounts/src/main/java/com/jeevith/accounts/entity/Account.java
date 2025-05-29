@@ -1,6 +1,7 @@
 package com.jeevith.accounts.entity;
 
 import com.jeevith.accounts.utility.GenerateCustomCustomerId;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -21,4 +22,6 @@ public class Account extends  BaseEntity {
     private long accountNumber;
     private String accountType;
     private String branchAddress;
+    @Column(name = "communication_sw")
+    private Boolean communicationSw;
 }
